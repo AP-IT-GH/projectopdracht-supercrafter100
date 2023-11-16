@@ -1,0 +1,27 @@
+version: "3"
+services:
+  backend:
+    build: ./backend
+    networks:
+      - proxy
+    labels:
+      - "traefik.http.routers.projectopdracht-backend.rule=Host(`s140024-1.devops-ap.be`) && PathPrefix(`/api/`)"
+      - "traefik.http.services.projectopdracht-backend.loadbalancer.server.port=3000"
+      - "traefik.http.routers.projectopdracht-backend.tls=false"
+      - "traefik.docker.network=traefik"
+
+  frontend:
+    image: nginx:1.22
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    networks:
+      - proxy
+    labels:
+      - "traefik.http.routers.projectopdracht-frontend.rule=Host(`s140024-1.devops-ap.be`)"
+      - "traefik.http.routers.projectopdracht-frontend.tls=false"
+      - "traefik.docker.network=traefik"
+
+networks:
+  proxy:
+    external: true
+    name: traefik
