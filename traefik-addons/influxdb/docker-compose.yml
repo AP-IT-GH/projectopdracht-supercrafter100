@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: influxdb:2.7-alpine
+    volumes:
+      - database:/var/lib/influxdb2
+    networks:
+      - traefikAddons
+
+volumes:
+  database:
+
+networks:
+  traefikAddons:
+    name: traefik-addons
+    external: true
