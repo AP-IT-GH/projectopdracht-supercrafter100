@@ -18,4 +18,9 @@ InfluxDB: Used for metrics on traefik
 2. Deploy traefik itself by following the instructions provided in the readme in the traefik folder.
 3. Deploy the example project provided in the project directory by following it's readme
 
-TODO:
+# TODO
+
+- [ ] https://docs.portainer.io/start/install-ce
+- [ ] Jenkins
+- [ ] Authentication on zipkin so it's not public to the internet
+- [ ] Write documentation for deployment of all services
