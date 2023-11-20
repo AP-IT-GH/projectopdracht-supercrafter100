@@ -18,7 +18,14 @@ services:
       - "traefik.http.routers.dashboard.tls=true"
       - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
       - "traefik.http.routers.dashboard.entrypoints=websecure"
+    
+    networks:
+      - traefikAddons
+      
 networks:
   default:
     external: true
     name: traefik
+  traefikAddons:
+    name: traefik-addons
+    external: true

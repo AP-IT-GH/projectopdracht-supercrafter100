@@ -23,3 +23,7 @@ providers:
 
 api:
   dashboard: true
+
+metrics:
+  influxDB:
+    address: influxdb:8089
