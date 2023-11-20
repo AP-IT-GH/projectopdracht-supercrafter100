@@ -5,7 +5,9 @@
 - [InfluxDB](https://metrics.school.supercrafter100.com/) (https://metrics.school.supercrafter100.com/)
 
 Traefik: Reverse proxy
+
 Zipkin: Used for tracing network requests
+
 InfluxDB: Used for metrics on traefik
 
 # How to deploy all services
@@ -15,3 +17,5 @@ InfluxDB: Used for metrics on traefik
     - **zipkin**: run `docker compose up` inside it's directory to deploy it.
 2. Deploy traefik itself by following the instructions provided in the readme in the traefik folder.
 3. Deploy the example project provided in the project directory by following it's readme
+
+TODO:
