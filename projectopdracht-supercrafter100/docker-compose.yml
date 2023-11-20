@@ -4,6 +4,13 @@ services:
     build: ./backend
     networks:
       - proxy
+      - database
+    environment:
+      - STORAGE=mysql
+      - MYSQL_HOST=db
+      - MYSQL_USER=${DB_USR}
+      - MYSQL_PWD=${DB_PW}
+      - MYSQL_DB=${DB_DATABASE}
     labels:
       - "traefik.http.routers.projectopdracht-backend.rule=Host(`s140024-1.devops-ap.be`) && PathPrefix(`/api/`)"
       - "traefik.http.services.projectopdracht-backend.loadbalancer.server.port=3000"
@@ -21,7 +28,27 @@ services:
       - "traefik.http.routers.projectopdracht-frontend.tls=false"
       - "traefik.docker.network=traefik"
 
+  db:
+    image: mysql:8.2.0
+    volumes:
+      - database:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    env_file:
+      - .env
+    environment:
+      - MYSQL_USER=${DB_USR}
+      - MYSQL_PASSWORD=${DB_PW}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PW}
+    networks:
+      - database
+
 networks:
   proxy:
     external: true
     name: traefik
+  
+  database:
+
+volumes:
+  database:
