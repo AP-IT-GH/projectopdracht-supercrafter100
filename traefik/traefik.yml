@@ -26,4 +26,16 @@ api:
 
 metrics:
   influxDB:
-    address: influxdb:8089
+    address: influxdb:8086
+    protocol: http
+    database: traefik
+    username: traefik
+    password: o1K55zydh5Vl
+    addRoutersLabels: true
+
+tracing:
+  zipkin:
+    httpEndpoint: http://zipkin:9411/api/v2/spans
+
+accessLog:
+  filePath: "/var/log/traefik/access.log"

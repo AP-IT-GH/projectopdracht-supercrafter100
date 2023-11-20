@@ -7,25 +7,20 @@ services:
       - 443:443
     volumes:
       - ./traefik.yml:/etc/traefik/traefik.yml
+      - ./access.log:/var/log/traefik/access.log
       - ./acme.json:/acme.json
       - /var/run/docker.sock:/var/run/docker.sock
       - ./passwd:/etc/traefik/passwd
     labels:
-      - "traefik.http.routers.dashboard.rule=Host(`traefik.supercrafter100.com`)"
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.school.supercrafter100.com`)"
       - "traefik.http.routers.dashboard.service=api@internal"
       - "traefik.http.routers.dashboard.middlewares=auth"
       - "traefik.http.middlewares.auth.basicauth.usersfile=/etc/traefik/passwd"
       - "traefik.http.routers.dashboard.tls=true"
       - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
       - "traefik.http.routers.dashboard.entrypoints=websecure"
-    
-    networks:
-      - traefikAddons
-      
+
 networks:
   default:
     external: true
     name: traefik
-  traefikAddons:
-    name: traefik-addons
-    external: true
