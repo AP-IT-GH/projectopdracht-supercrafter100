@@ -1,0 +1,18 @@
+version: "3"
+services:
+  zipkin:
+    image: openzipkin/zipkin:3
+    networks:
+      - proxy
+    labels:
+      - "traefik.http.routers.zipkin.rule=Host(`tracing.school.supercrafter100.com`)"
+      - "traefik.http.services.zipkin.loadbalancer.server.port=9411"
+      - "traefik.http.routers.zipkin.tls=true"
+      - "traefik.http.routers.zipkin.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.zipkin.entrypoints=websecure"
+      - "traefik.docker.network=traefik"
+
+networks:
+  proxy:
+    external: true
+    name: traefik
