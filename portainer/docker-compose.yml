@@ -1,0 +1,24 @@
+version: "3"
+services:
+  portainer:
+    image: portainer/portainer-ce:2.19.2-alpine
+    volumes:
+      - portainerData:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - proxy
+    labels:
+      - "traefik.http.routers.portainer.rule=Host(`portainer.school.supercrafter100.com`)"
+      - "traefik.http.services.portainer.loadbalancer.server.port=9000"
+      - "traefik.http.routers.portainer.tls=true"
+      - "traefik.http.routers.portainer.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.portainer.entrypoints=websecure"
+      - "traefik.docker.network=traefik"
+
+networks:
+  proxy:
+    external: true
+    name: traefik
+  
+volumes:
+  portainerData:

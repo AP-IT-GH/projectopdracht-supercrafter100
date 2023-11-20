@@ -3,6 +3,7 @@
 - [Traefik](https://traefik.school.supercrafter100.com/) (https://traefik.school.supercrafter100.com/)
 - [Zipkin](https://tracing.school.supercrafter100.com/) (https://tracing.school.supercrafter100.com/)
 - [InfluxDB](https://metrics.school.supercrafter100.com/) (https://metrics.school.supercrafter100.com/)
+- [Portainer](https://portainer.school.supercrafter100.com/) (https://portainer.school.supercrafter100.com/)
 
 Traefik: Reverse proxy
 
