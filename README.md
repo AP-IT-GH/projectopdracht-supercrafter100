@@ -1,6 +1,7 @@
 # Running services
 
 - [Traefik](https://traefik.school.supercrafter100.com/) (https://traefik.school.supercrafter100.com/)
+- [Todo Service](https://s140024.devops-ap.be/) (https://s140024.devops-ap.be/)
 - [Zipkin](https://tracing.school.supercrafter100.com/) (https://tracing.school.supercrafter100.com/)
 - [InfluxDB](https://metrics.school.supercrafter100.com/) (https://metrics.school.supercrafter100.com/)
 - [Portainer](https://portainer.school.supercrafter100.com/) (https://portainer.school.supercrafter100.com/)
@@ -9,6 +10,8 @@
 - [Grafana](https://grafana.school.supercrafter100.com/) (https://grafana.school.supercrafter100.com/)
 
 Traefik: Reverse proxy
+
+Todo Service: Service that combines both a database, backend and frontend in a single compose file. Provided by AP Hogeschool
 
 Zipkin: Used for tracing network requests
 
