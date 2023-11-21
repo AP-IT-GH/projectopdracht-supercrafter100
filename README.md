@@ -31,6 +31,6 @@ Uptime Kuma: Uptime monitoring of the hosted services
 - [ ] Authentication on zipkin so it's not public to the internet
 - [ ] Write documentation for deployment of all services
 - [ ] Grafana to visualize the data of InfluxDB (traefik)
-- [ ] Monitoring
-- [ ] Central authentication (lookup traefik docs?)
+- [x] Monitoring
+- [ ] Central authentication (lookup traefik docs?) (https://github.com/travisghansen/external-auth-server, https://doc.traefik.io/traefik/middlewares/http/forwardauth/)
 - [ ] Software forge (forgejo)
