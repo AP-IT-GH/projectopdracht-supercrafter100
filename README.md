@@ -4,6 +4,7 @@
 - [Zipkin](https://tracing.school.supercrafter100.com/) (https://tracing.school.supercrafter100.com/)
 - [InfluxDB](https://metrics.school.supercrafter100.com/) (https://metrics.school.supercrafter100.com/)
 - [Portainer](https://portainer.school.supercrafter100.com/) (https://portainer.school.supercrafter100.com/)
+- [Uptime Kuma](https://uptime.school.supercrafter100.com/) (https://uptime.school.supercrafter100.com/)
 
 Traefik: Reverse proxy
 
@@ -12,6 +13,8 @@ Zipkin: Used for tracing network requests
 InfluxDB: Used for metrics on traefik
 
 Portainer: Visualisation of running containers and managing them
+
+Uptime Kuma: Uptime monitoring of the hosted services
 
 # How to deploy all services
 
