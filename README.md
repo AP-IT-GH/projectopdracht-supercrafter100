@@ -6,6 +6,7 @@
 - [Portainer](https://portainer.school.supercrafter100.com/) (https://portainer.school.supercrafter100.com/)
 - [Uptime Kuma](https://uptime.school.supercrafter100.com/) (https://uptime.school.supercrafter100.com/)
 - [Forgejo](https://git.school.supercrafter100.com/) (https://git.school.supercrafter100.com/)
+- [Grafana](https://grafana.school.supercrafter100.com/) (https://grafana.school.supercrafter100.com/)
 
 Traefik: Reverse proxy
 
@@ -18,6 +19,8 @@ Portainer: Visualisation of running containers and managing them
 Uptime Kuma: Uptime monitoring of the hosted services
 
 Forgejo: Software forge with alternate github repository
+
+Grafana: Visualisations of metrics of Traefik
 
 # How to deploy all services
 

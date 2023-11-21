@@ -1,0 +1,23 @@
+version: "3"
+services:
+  grafana: 
+    image: grafana/grafana-oss
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    networks:
+      - proxy
+    labels:
+      - "traefik.http.routers.grafana.rule=Host(`grafana.school.supercrafter100.com`)"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+      - "traefik.http.routers.grafana.tls=true"
+      - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.grafana.entrypoints=websecure"
+      - "traefik.docker.network=traefik"
+
+volumes:
+  grafana-storage:
+
+networks:
+  proxy:
+    external: true
+    name: traefik
