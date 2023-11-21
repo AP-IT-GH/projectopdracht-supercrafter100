@@ -5,6 +5,7 @@
 - [InfluxDB](https://metrics.school.supercrafter100.com/) (https://metrics.school.supercrafter100.com/)
 - [Portainer](https://portainer.school.supercrafter100.com/) (https://portainer.school.supercrafter100.com/)
 - [Uptime Kuma](https://uptime.school.supercrafter100.com/) (https://uptime.school.supercrafter100.com/)
+- [Forgejo](https://git.school.supercrafter100.com/) (https://git.school.supercrafter100.com/)
 
 Traefik: Reverse proxy
 
@@ -15,6 +16,8 @@ InfluxDB: Used for metrics on traefik
 Portainer: Visualisation of running containers and managing them
 
 Uptime Kuma: Uptime monitoring of the hosted services
+
+Forgejo: Software forge with alternate github repository
 
 # How to deploy all services
 
@@ -33,4 +36,4 @@ Uptime Kuma: Uptime monitoring of the hosted services
 - [ ] Grafana to visualize the data of InfluxDB (traefik)
 - [x] Monitoring
 - [ ] Central authentication (lookup traefik docs?) (https://github.com/travisghansen/external-auth-server, https://doc.traefik.io/traefik/middlewares/http/forwardauth/)
-- [ ] Software forge (forgejo)
+- [x] Software forge (forgejo)
