@@ -21,7 +21,8 @@ InfluxDB: Used for metrics on traefik
 
 # TODO
 
-- [ ] https://docs.portainer.io/start/install-ce
+- [x] https://docs.portainer.io/start/install-ce
 - [ ] Jenkins
 - [ ] Authentication on zipkin so it's not public to the internet
 - [ ] Write documentation for deployment of all services
+- [ ] Grafana to visualize the data of InfluxDB (traefik)
