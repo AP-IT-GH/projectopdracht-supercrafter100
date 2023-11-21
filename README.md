@@ -11,6 +11,8 @@ Zipkin: Used for tracing network requests
 
 InfluxDB: Used for metrics on traefik
 
+Portainer: Visualisation of running containers and managing them
+
 # How to deploy all services
 
 1. First of all, all services in the traefik-addons directory should be deployed
