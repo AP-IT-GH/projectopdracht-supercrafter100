@@ -15,16 +15,19 @@ $ influx config create \
   -o ORG
 ```
 replacing CONFIG_NAME with the name of the configuration, USERNAME with the admin username you made for your account, PASSWORD with the password you configured for the account and lastly ORG with the organization you chose.
+
 5. Create a new bucket for traefik to use
 ```bash
 $ influx bucket create -n traefik -o ORG -r 2h
 ```
 replacing ORG with the organisation of the admin account
+
 6. Now list the available buckets for your org so we can get the id using:
 ```bash
 $ influx bucket ls -o ORG
 ```
 replacing ORG with the organisation of the admin account. Copy the id of our newly created traefik bucket.
+
 7. Create a new v1 authentication token for traefik to use using the following command:
 ```bash
 $ influx v1 auth create --username traefik --password o1K55zydh5Vl --read-bucket BUCKET_ID --write-bucket BUCKET_ID
