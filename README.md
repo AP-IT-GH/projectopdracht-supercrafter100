@@ -28,3 +28,6 @@ Portainer: Visualisation of running containers and managing them
 - [ ] Authentication on zipkin so it's not public to the internet
 - [ ] Write documentation for deployment of all services
 - [ ] Grafana to visualize the data of InfluxDB (traefik)
+- [ ] Monitoring
+- [ ] Central authentication (lookup traefik docs?)
+- [ ] Software forge (forgejo)
