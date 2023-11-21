@@ -30,3 +30,4 @@ Portainer: Visualisation of running containers and managing them
 - [ ] Grafana to visualize the data of InfluxDB (traefik)
 - [ ] Monitoring
 - [ ] Central authentication (lookup traefik docs?)
+- [ ] Software forge (forgejo)
