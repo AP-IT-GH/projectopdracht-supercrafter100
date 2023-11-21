@@ -34,9 +34,9 @@ Grafana: Visualisations of metrics of Traefik
 
 - [x] https://docs.portainer.io/start/install-ce
 - [ ] Jenkins
-- [ ] Authentication on zipkin so it's not public to the internet
+- [ ] Authentication on zipkin so it's not public to the internet (2 flies in 1 hit by using the central authentication?)
 - [ ] Write documentation for deployment of all services
-- [ ] Grafana to visualize the data of InfluxDB (traefik)
+- [x] Grafana to visualize the data of InfluxDB (traefik)
 - [x] Monitoring
 - [ ] Central authentication (lookup traefik docs?) (https://github.com/travisghansen/external-auth-server, https://doc.traefik.io/traefik/middlewares/http/forwardauth/)
 - [x] Software forge (forgejo)
