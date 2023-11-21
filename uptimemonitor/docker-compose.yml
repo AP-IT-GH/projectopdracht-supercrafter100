@@ -1,0 +1,21 @@
+version: "3"
+services:
+  uptimekuma:
+    image: louislam/uptime-kuma:1
+    volumes:
+      - uptimekuma:/app/data
+    networks:
+      - proxy
+    labels:
+      - "traefik.http.routers.uptimemonitor.rule=Host(`uptime.school.supercrafter100.com`)"
+      - "traefik.http.services.uptimemonitor.loadbalancer.server.port=3001"
+      - "traefik.http.routers.uptimemonitor.tls=true"
+      - "traefik.http.routers.uptimemonitor.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.uptimemonitor.entrypoints=websecure"
+      - "traefik.docker.network=traefik"
+volumes:
+  uptimekuma:
+networks:
+  proxy:
+    external: true
+    name: traefik
