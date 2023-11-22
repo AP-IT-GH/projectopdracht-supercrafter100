@@ -1,8 +1,0 @@
-AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
-[Wed Nov 22 20:39:53.456804 2023] [mpm_prefork:notice] [pid 10] AH00163: Apache/2.4.18 (Ubuntu) configured -- resuming normal operations
-[Wed Nov 22 20:39:53.456877 2023] [core:notice] [pid 10] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
-[Wed Nov 22 20:41:32.762553 2023] [authz_core:error] [pid 61] [client 172.22.0.5:34082] AH01630: client denied by server configuration: /opt/observium/html/server-status
-[Wed Nov 22 20:42:45.385741 2023] [mpm_prefork:notice] [pid 10] AH00169: caught SIGTERM, shutting down
-AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
-[Wed Nov 22 20:42:50.002313 2023] [mpm_prefork:notice] [pid 11] AH00163: Apache/2.4.18 (Ubuntu) configured -- resuming normal operations
-[Wed Nov 22 20:42:50.002524 2023] [core:notice] [pid 11] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
