@@ -5,6 +5,8 @@ services:
     networks:
       - proxy
       - database
+    env_file:
+      - .env
     environment:
       - STORAGE=mysql
       - MYSQL_HOST=db
