@@ -1,0 +1,10 @@
+[94mThis is the default poller. Will only poll devices with no specified poller set.[0m
+INFO: starting the poller at 2023/11/22 19:40:01 with 4 threads
+INFO: poller-wrapper.py poller processed 0 devices in 0.33 seconds with 4 threads, load average (5min) 0.57
+
+Number of rows updated: 0
+[94mThis is the default poller. Will only poll devices with no specified poller set.[0m
+INFO: starting the poller at 2023/11/22 19:45:02 with 4 threads
+INFO: poller-wrapper.py poller processed 0 devices in 0.25 seconds with 4 threads, load average (5min) 0.32
+
+Number of rows updated: 1

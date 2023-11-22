@@ -1,0 +1,52 @@
+version: "3"
+services:
+  observium-db:
+    image: mariadb:10.6.4
+    env_file:
+      - .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PW}
+      - MYSQL_USER=${DB_USR}
+      - MYSQL_PASSWORD=${DB_PW}
+      - MYSQL_DATABASE=${DB_NAME}
+      - TZ=Europe/Brussels
+    volumes:
+      - observium-db:/var/lib/mysql
+    networks:
+      - backend
+
+  observium:
+    image: mbixtech/arm32v7-observium:latest
+    env_file:
+      - .env
+    environment:
+      - OBSERVIUM_ADMIN_USER=${OBS_ADM_USR}
+      - OBSERVIUM_ADMIN_PASS=${OBS_ADM_PWD}
+      - OBSERVIUM_DB_HOST=observium-db
+      - OBSERVIUM_DB_NAME=${DB_NAME}
+      - OBSERVIUM_DB_USER=${DB_USR} 
+      - OBSERVIUM_DB_PASS=${DB_PW}
+      - OBSERVIUM_BASE_URL=http://observium.school.supercrafter100.com
+      - TZ=Europe/Brussels
+    networks:
+      - proxy
+      - backend
+    volumes:
+      - ./logs:/opt/observium/logs
+      - ./rrd:/opt/observium/rrd
+    depends_on:
+      - observium-db
+    labels:
+      - "traefik.http.routers.observium.rule=Host(`observium.school.supercrafter100.com`)"
+      - "traefik.http.routers.observium.tls=true"
+      - "traefik.http.routers.observium.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.observium.entrypoints=websecure"
+      - "traefik.docker.network=traefik"
+volumes:
+  observium-db:
+
+networks:
+  proxy:
+    external: true
+    name: traefik
+  backend:
