@@ -1,0 +1,21 @@
+version: "3"
+services:
+  jenkins:
+    restart: unless-stopped
+    image: jenkins/jenkins:jdk11
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "traefik.http.routers.jenkins.rule=Host(`ci.school.supercrafter100.com`)"
+      - "traefik.http.routers.jenkins.tls=true"
+      - "traefik.http.routers.jenkins.tls.certresolver=letsencrypt"
+      - "traefik.http.services.jenkins.loadbalancer.server.port=8080"
+    networks:
+      - proxy
+volumes:
+  jenkins-data:
+networks:
+  proxy:
+    external: true
+    name: traefik
