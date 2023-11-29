@@ -1,6 +1,7 @@
 version: "3"
 services:
   uptimekuma:
+    restart: unless-stopped
     image: louislam/uptime-kuma:1
     volumes:
       - uptimekuma:/app/data

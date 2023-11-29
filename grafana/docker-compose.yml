@@ -1,6 +1,7 @@
 version: "3"
 services:
   grafana: 
+    restart: unless-stopped
     image: grafana/grafana-oss
     volumes:
       - grafana-storage:/var/lib/grafana

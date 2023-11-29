@@ -8,6 +8,7 @@
 - [Uptime Kuma](https://uptime.school.supercrafter100.com/) (https://uptime.school.supercrafter100.com/)
 - [Forgejo](https://git.school.supercrafter100.com/) (https://git.school.supercrafter100.com/)
 - [Grafana](https://grafana.school.supercrafter100.com/) (https://grafana.school.supercrafter100.com/)
+- [Observium](https://observium.school.supercrafter100.com/) (https://observium.school.supercrafter100.com/)
 
 Traefik: Reverse proxy
 
@@ -24,6 +25,8 @@ Uptime Kuma: Uptime monitoring of the hosted services
 Forgejo: Software forge with alternate github repository
 
 Grafana: Visualisations of metrics of Traefik
+
+Observium: Monitoring of the server (**IMPORTANT**: while the web ui works, the agent didn't want to function as we don't have the neccessary ports to make it work)
 
 # How to deploy all services
 

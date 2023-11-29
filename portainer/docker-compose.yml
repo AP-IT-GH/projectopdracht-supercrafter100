@@ -1,6 +1,7 @@
 version: "3"
 services:
   portainer:
+    restart: unless-stopped
     image: portainer/portainer-ce
     volumes:
       - portainerData:/data

@@ -1,6 +1,7 @@
 version: "3"
 services:
   influxdb:
+    restart: unless-stopped
     image: influxdb:2.7-alpine
     volumes:
       - database:/var/lib/influxdb2
