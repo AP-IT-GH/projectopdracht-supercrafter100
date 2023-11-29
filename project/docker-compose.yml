@@ -1,12 +1,11 @@
 version: "3"
 services:
   backend:
+    restart: unless-stopped
     build: ./backend
     networks:
       - proxy
       - database
-    env_file:
-      - .env
     environment:
       - STORAGE=mysql
       - MYSQL_HOST=db
@@ -16,27 +15,33 @@ services:
     labels:
       - "traefik.http.routers.projectopdracht-backend.rule=Host(`s140024.devops-ap.be`) && PathPrefix(`/api/`)"
       - "traefik.http.services.projectopdracht-backend.loadbalancer.server.port=3000"
-      - "traefik.http.routers.projectopdracht-backend.tls=false"
+      - "traefik.http.routers.projectopdracht-backend.tls=true"
+      - "traefik.http.routers.projectopdracht-backend.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.projectopdracht-backend.entrypoints=websecure"
       - "traefik.docker.network=traefik"
+    depends_on: 
+      - db
 
   frontend:
+    restart: unless-stopped
     image: nginx:1.22
     volumes:
       - ./frontend:/usr/share/nginx/html
     networks:
       - proxy
     labels:
-      - "traefik.http.routers.projectopdracht-frontend.rule=Host(`s140024.devops-ap.be`)"
-      - "traefik.http.routers.projectopdracht-frontend.tls=false"
+      - "traefik.http.routers.projectopdracht-frontend.rule=Host(`s140024.devops-ap.be`) && !PathPrefix(`/api`)"
+      - "traefik.http.routers.projectopdracht-frontend.tls=true"
+      - "traefik.http.routers.projectopdracht-frontend.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.projectopdracht-frontend.entrypoints=websecure"
       - "traefik.docker.network=traefik"
 
   db:
+    restart: unless-stopped
     image: mysql:8.2.0
     volumes:
       - database:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    env_file:
-      - .env
     environment:
       - MYSQL_USER=${DB_USR}
       - MYSQL_PASSWORD=${DB_PW}
