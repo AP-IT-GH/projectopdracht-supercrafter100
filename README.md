@@ -9,6 +9,8 @@
 - [Forgejo](https://git.school.supercrafter100.com/) (https://git.school.supercrafter100.com/)
 - [Grafana](https://grafana.school.supercrafter100.com/) (https://grafana.school.supercrafter100.com/)
 - [Observium](https://observium.school.supercrafter100.com/) (https://observium.school.supercrafter100.com/)
+- [Jenkins](https://ci.school.supercrafter100.com/) (https://ci.school.supercrafter100.com/)
+- [WoodpeckerCI](https://woodpecker.school.supercrafter100.com/) (https://woodpecker.school.supercrafter100.com/)
 
 Traefik: Reverse proxy
 
@@ -27,6 +29,10 @@ Forgejo: Software forge with alternate github repository
 Grafana: Visualisations of metrics of Traefik
 
 Observium: Monitoring of the server (**IMPORTANT**: while the web ui works, the agent didn't want to function as we don't have the neccessary ports to make it work)
+
+Jenkins: A CI/CD tool
+
+WoodpeckerCI: another CI/CD tool
 
 # How to deploy all services
 
