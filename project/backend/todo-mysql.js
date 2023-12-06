@@ -53,7 +53,7 @@ async function verify() {
     try {
         const [rows, fields ] = await pool.query(`SELECT count(*) as count
         FROM information_schema.TABLES
-        WHERE (TABLE_SCHEMA = 'examen') AND (TABLE_NAME = 'todos')`);
+        WHERE (TABLE_SCHEMA = 'todos') AND (TABLE_NAME = 'todos')`);
         return {status: 'ok', todoTable: rows[0].count > 0 ? 'ok' : 'not ok'}
     }
     catch(err) {
