@@ -45,7 +45,7 @@ WoodpeckerCI: another CI/CD tool
 # TODO
 
 - [x] https://docs.portainer.io/start/install-ce
-- [ ] Jenkins
+- [x] Jenkins
 - [ ] Authentication on zipkin so it's not public to the internet (2 flies in 1 hit by using the central authentication?)
 - [ ] Write documentation for deployment of all services
 - [x] Grafana to visualize the data of InfluxDB (traefik)

@@ -41,3 +41,8 @@ De API draait in een subfolder /api.
 1. Configureer ssl certificaat aanvraag via LetsEncrypt
 1. Expose de todo applicatie op ```https://<studentnr>.devops-ap.be```
 
+# Deploying
+
+1. Maak een .env bestand aan met al de variabelen van de `.example.env` en vul deze in
+2. Verander eventueel de domeinnaam in de traefik labels in de docker-compose.yml
+3. Run `docker compose up -d` om de applicatie op te starten
